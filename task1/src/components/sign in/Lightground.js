@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import light from '/workspace/ui/task1/src/components/image/light.jpg'
 import google from '/workspace/ui/task1/src/components/image/google.png'
 import fb from '/workspace/ui/task1/src/components/image/facebook.png'
+import { Link } from 'react-router-dom';
 
 
 function Lightground() {
@@ -44,7 +45,7 @@ function Lightground() {
               <img src={fb} alt="fb" className='w-10 rounded-full  mx-2'></img>
             </div>
             <div className='flex mb-12 mt-3 '>
-              <p>Don't have an account?</p><p className='ml-3 blur-1  text-purple-900 font-bold'> Sign up </p>
+              <p>Don't have an account?</p><Link to='/signup' className='ml-3 blur-1  text-purple-900 font-bold'> Sign up </Link>
             </div>
           </div>
         </div>

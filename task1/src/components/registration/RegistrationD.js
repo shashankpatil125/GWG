@@ -5,27 +5,10 @@ import dark from "/workspace/ui/task1/src/components/image/dark.jpg"
 
 function RegistrationD() {
     return (
-        // <div class="flex h-screen justify-center items-center bg-no-repeat bg-cover " style={{ backgroundImage: `url(${colorbackground})` }}>
-        //     <div class="text-center bg-blue-400">
-        //         <h1 class="text-3xl">Sign up with your email and password</h1>
-        //         <input type="text" placeholder='Choose user id '></input>
-        //         <br/>
-        //         <input type="text" placeholder='Email id'></input>
-        //         <br/>
-        //         <input type="text" placeholder='New Password'></input>
-        //         <br/>
-        //         <button>Create Account</button>
-        //         <p>Or sign up with your social media account</p>
-        //         <div className='flex justify-center mt-5 '>
-        //             <img src={google} alt="google" className='w-10 rounded-full mx-2'></img>
-        //             <img src={fb} alt="fb" className='w-10 rounded-full  mx-2'></img>
-        //         </div>
-        //         <p class="text-xl">Sub text</p>
-        //     </div>
-        // </div>
+        
 
         <div className='w-screen h-screen bg-no-repeat bg-cover' style={{ backgroundImage: `url(${dark})` }}>
-            <div className="flex h-screen justify-center items-center">
+            <div className="flex h-screen justify-center items-center bg">
                 <div className="p-5 rounded-3xl text-center ">
                     <h1 className=" font-font-mast text-5xl text-white font-semibold mb-8">Sign up</h1>
                     <p className="text-white mb-3 text-xl w-80">Sign up with email and password</p>

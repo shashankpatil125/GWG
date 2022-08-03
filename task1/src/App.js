@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Registration from './components/registration/Registration';
 import WrapReg from './components/registration/WrapReg';
 import Feed from './components/feed/Feed';
+import UserProfile from './components/userProfile/UserProfile';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/signin" element={<Signin/>}></Route>
           <Route path="/signup" element={<WrapReg/>}></Route>
           <Route path="/feed" element={<Feed/>}></Route>
+          <Route path="/userprofile" element={<UserProfile/>}></Route>
         </Routes>
       </BrowserRouter>
   );

@@ -4,6 +4,7 @@ import light from '/workspace/ui/task1/src/components/image/light.jpg'
 import google from '/workspace/ui/task1/src/components/image/google.png'
 import fb from '/workspace/ui/task1/src/components/image/facebook.png'
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom'
 
 function Blackground() {
   const [li, setli] = useState(localStorage.getItem('li'));
@@ -45,7 +46,7 @@ function Blackground() {
             </div>
 
             <div className='flex mb-12 mt-3 '>
-              <p className='text-white'>Don't have an account?</p><p className='ml-3  text-yellow-400 transp blur-1 font-bold'> Sign up </p>
+              <p className='text-white'>Don't have an account?</p><Link to='/signup' className='ml-3 blur-1  text-yellow-500 font-bold'> Sign up </Link>
             </div>
           </div>
         </div>

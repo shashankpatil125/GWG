@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
+import {  Link  } from "react-router-dom";
 
 function UserInfo(props) {
   return (
@@ -10,7 +11,8 @@ function UserInfo(props) {
 
       <div style={{background:"#2b2d3d"}} className='flex mx-4 p-1 mb-2 text-gray-200 rounded-lg cursor-pointer hover:shadow-lg hover:shadow-gray-900  '>
         <Icon className='text-2xl ml-3 mr-3 my-auto' icon="carbon:user-avatar-filled-alt" />
-        <button className='text-lg my-auto'>Profile</button>
+        <Link className='text-lg my-auto' to="/userprofile">Profile</Link>
+        {/* <button></button> */}
       </div>
       <div style={{background:"#2b2d3d"}} className='flex mx-4 p-1 mb-2 text-gray-200 rounded-lg  cursor-pointer hover:shadow-lg hover:shadow-gray-900'>
         <Icon className='text-2xl ml-3 mr-3 my-auto' icon="dashicons:groups" />

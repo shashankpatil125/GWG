@@ -18,6 +18,7 @@ function Feed() {
   const [postdisc,setpostedisc] = useState('Peter always saw the world in black and white. There were two choices for every situation and you had to choose one of them. It was therefore terribly uncomfortable for him to spend time with Ashley.')
   const [postpic,setpostpic] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn-B5ineZkUzuOQuRY1PTsQJNKLyfsDW33R3o-7izFmL1gXyOI5RCobP-Unssvwn5Cl24&usqp=CAU')
 
+  localStorage.setItem('ProfilePic', '=')
   return (
     <div className='flex h-screen w-screen'>
       <UserInfo UserPic={userimg} UserName={username} UserId={userid} />
