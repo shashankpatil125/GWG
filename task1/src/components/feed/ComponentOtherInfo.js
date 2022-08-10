@@ -2,7 +2,7 @@ import React from 'react'
 
 function ComponentOtherInfo() {
     return (
-        <div className='h-screen w-64 ' style={{ background: "#222433" }}>
+        <div className='h-screen w-64 pt-16 ' style={{ background: "#222433" }}>
             <div className=' justify-end '>
                 <p className='font-bold text-zinc-400 text-lg m-4 mx-6'>Friends</p>
                 <div className='flex mb-3'>

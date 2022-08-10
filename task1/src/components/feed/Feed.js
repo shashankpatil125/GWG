@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import ComponentOtherInfo from './ComponentOtherInfo'
 import ComponentPost from './ComponentPost'
 import ComponentSearch from './ComponentSearch'
+import Navbar from './Navbar'
 // import Posts from './Posts'
 import UserInfo from './UserInfo'
+
 
 
 function Feed() {
@@ -20,11 +22,14 @@ function Feed() {
 
   localStorage.setItem('ProfilePic', '=')
   return (
-    <div className='flex h-screen w-screen'>
-      <UserInfo UserPic={userimg} UserName={username} UserId={userid} />
+    
+    <div className='flex h-screen w-screen ' style={{ background: "#222433" }}>
+      {/* <UserInfo UserPic={userimg} UserName={username} UserId={userid} /> */}
       
-      <div className='h-screen w-7/12 ml-72 overflow-auto  scroll-smooth ' style={{ background: "#222433" }} >
-        <ComponentSearch UserPic={userimg} UserName={username} />
+      <Navbar UserPic={userimg} UserName={username} UserId={userid}/>      
+      
+      <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-16' style={{ background: "#222433" }} >
+        {/* <ComponentSearch UserPic={userimg} UserName={username} /> */}
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>

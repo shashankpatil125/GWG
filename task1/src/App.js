@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WrapReg from './components/registration/WrapReg';
 import Feed from './components/feed/Feed';
 import UserProfile from './components/userProfile/UserProfile';
+import Navbar from './components/feed/Navbar';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/signup" element={<WrapReg/>}></Route>
           <Route path="/feed" element={<Feed/>}></Route>
           <Route path="/userprofile" element={<UserProfile/>}></Route>
+          <Route path="/nav" element={<Navbar/>}></Route>
         </Routes>
       </BrowserRouter>
   );
