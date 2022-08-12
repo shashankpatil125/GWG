@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 function UserInfo(props) {
   return (
-    <div className='delay-500  h-full w-2/12 pt-16 absolute top-0 left-0 '>
-      <div className='h-fit pb-5 bg-slate-900 m-2 mr-0 p-2 rounded-lg'>
+    <div className='h-full w-3/12 absolute top-1 right-1 mt-14 '>
+      <div className='h-fit pb-5 bg-slate-900 m-2 mr-0 p-4 rounded-lg'>
       <div className='flex'>
         <img className='h-20 w-20 rounded-full m-2 mb-3' src={props.UserPic}></img>
         <div className='grid justify-items-stretch w-full'>
-          <Icon className='text-2xl text-gray-500  rounded-sm justify-self-end  mr-4  ' icon="ant-design:edit-outlined" />
+          <Icon className='text-2xl text-gray-500  rounded-sm justify-self-end  mr-4 mt-3 ' icon="ant-design:edit-outlined" />
         </div>
       </div>
       <p className='text-white'>{props.UserName}</p>

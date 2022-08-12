@@ -5,7 +5,7 @@ import ComponentSearch from './ComponentSearch'
 import Navbar from './Navbar'
 // import Posts from './Posts'
 import UserInfo from './UserInfo'
-
+import "/workspace/ui/task1/src/components/feed/feed.css"
 
 
 function Feed() {
@@ -26,15 +26,18 @@ function Feed() {
     <div className='flex h-screen w-screen ' style={{ background: "#222433" }}>
       {/* <UserInfo UserPic={userimg} UserName={username} UserId={userid} /> */}
       
-      <Navbar UserPic={userimg} UserName={username} UserId={userid}/>      
+      <Navbar UserPic={userimg} UserName={username} UserId={userid}/>  
+      <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-14 example'   style={{ background: "#222433" }} >
       
-      <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-16' style={{ background: "#222433" }} >
+        
+      
         {/* <ComponentSearch UserPic={userimg} UserName={username} /> */}
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
+      
       </div>
-      <ComponentOtherInfo/>
+      {/* <ComponentOtherInfo/> */}
     </div>
   )
 }
