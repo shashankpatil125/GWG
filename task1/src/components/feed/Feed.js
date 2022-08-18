@@ -31,7 +31,7 @@ function Feed() {
       
         
       
-        {/* <ComponentSearch UserPic={userimg} UserName={username} /> */}
+        <ComponentSearch UserPic={userimg} UserName={username} />
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
         <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
