@@ -4,9 +4,8 @@ import fb from '/workspace/ui/task1/src/components/image/facebook.png'
 import dark from "/workspace/ui/task1/src/components/image/dark.jpg"
 import { Icon } from '@iconify/react';
 import light from '/workspace/ui/task1/src/components/image/light.jpg'
-import { Auth } from '@supabase/ui'
-// import { Auth, Typography, Button } from '@supabase/ui'
 import { createClient } from '@supabase/supabase-js'
+import { Link } from 'react-router-dom';
 
 function Signup() {
     const [bool, setbool] = useState(true)
@@ -14,6 +13,7 @@ function Signup() {
     const [b, setb] = useState(" text-white ")
     const [c, setc] = useState(" text-gray-300 ")
     const [d, setd] = useState(" bg-yellow-500 ")
+    const [t, sett] = useState('false')
 
     const [id, setid] = useState('');
     const [pass, setpass] = useState('');
@@ -23,20 +23,30 @@ function Signup() {
 
 
 
-    function post(id, pass, cpass) {
+    async function post(id, pass, cpass) {
         console.log(id, pass)
 
         if (pass != cpass) {
-            alert("Enter password again correctely ")
+            alert("Enter confirm password again correctely ")
+            setpass('');
+            setcpass('');
         }
         else if (pass === cpass) {
-
             supabase.auth.signUp({
                 email: id,
                 password: pass,
+                
             })
             
+            
+            setid('');
+            setpass('');
+            setcpass('');
+            sett=true;
+            console.log('t')
         }
+        console.log(t)
+
     }
 
     function chenge() {
@@ -72,7 +82,7 @@ function Signup() {
                             <p className={c}>Remember me</p>
                         </div>
 
-                        <button className={" text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" + (d)} onClick={() => (post(id, pass, cpass))}>Create account</button>
+                        <Link to={b?'/signin':'/signup'}><button className={" text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" + (d)} onClick={() => (post(id, pass, cpass))}>Create account</button></Link>
                         <p className={(b) + " mt-3 mb-3 text-xl"}>Sign up with social media</p>
                         <div className='flex justify-center mt-5 '>
                             <img src={google} alt="google" className='w-10 rounded-full mx-2'></img>

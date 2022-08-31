@@ -6,10 +6,12 @@ import dark from "/workspace/ui/task1/src/components/image/dark.jpg"
 import { Icon } from '@iconify/react'
 import light from '/workspace/ui/task1/src/components/image/light.jpg'
 import { createClient } from '@supabase/supabase-js'
+import { withRouter } from 'react-router-dom'
 function Login() {
 
   const [lid, setlid] = useState('');
   const [lpass, setlpass] = useState('');
+  const [tof, settof] = useState(true);
 
   const [bool, setbool] = useState(true)
   const [a, seta] = useState(`url(${dark})`)
@@ -33,14 +35,27 @@ function Login() {
   }
 
   const supabase = createClient('https://ilmdokwizfwrxisiejiq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlsbWRva3dpemZ3cnhpc2llamlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTk5NTQwNTEsImV4cCI6MTk3NTUzMDA1MX0.55cyt865pWsMi3p5z5RoKLKICPGb5ehYeJJHtjGABG0')
-  function post(lid, lpass) {
+
+  async function post(lid, lpass) {
+    var rem
     console.log("ultra");
-    console.log(
-    supabase.auth.signIn({
+
+    const a=await supabase.auth.signIn({
       email: lid,
       password: lpass,
-    }))
+    })
+    console.log(a.error);
+    if (a.error == null) {
+      settof(false);
+      console.log(tof);
+    }
+    else if (a.error !== null) {
+      alert((a.error.message +" "+a.error.status ))
+      setlid('')
+      setlpass('')
+    }
   }
+
 
   return (
     <div className={"w-screen h-screen bg-no-repeat bg-cover "} style={{ backgroundImage: (a) }}>
@@ -59,8 +74,9 @@ function Login() {
             </div>
 
 
-
-            <button className={" text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" + (d)} onClick={() => (post(lid, lpass))}>Login</button>
+            <Link to={tof ? '/signin' : '/feed'}>
+              <button className={" text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" + (d)} onClick={() => (post(lid, lpass))}>Login</button>
+            </Link>
             <div className='flex justify-center mt-5 '>
               <img src={google} alt="google" className='w-10 rounded-full mx-2'></img>
               <img src={fb} alt="fb" className='w-10 rounded-full  mx-2'></img>
@@ -72,7 +88,9 @@ function Login() {
           </div>
         </div>
       </div>
+
       <button className='bg-white h-fit w-fit  absolute bottom-9 left-9 p-1 rounded-full' onClick={chenge}><Icon className='text-5xl' icon="fluent:dark-theme-20-filled" /></button>
+
     </div>
   )
 }
