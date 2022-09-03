@@ -20,6 +20,11 @@ function Feed() {
   const [postdisc,setpostedisc] = useState('Peter always saw the world in black and white. There were two choices for every situation and you had to choose one of them. It was therefore terribly uncomfortable for him to spend time with Ashley.')
   const [postpic,setpostpic] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn-B5ineZkUzuOQuRY1PTsQJNKLyfsDW33R3o-7izFmL1gXyOI5RCobP-Unssvwn5Cl24&usqp=CAU')
 
+  var postArr=[{PosterImg:posterimg, PosterName:postername, PostDisc:postdisc, PostPic:postpic},
+    {PosterImg:posterimg, PosterName:postername, PostDisc:postdisc, PostPic:postpic}];
+  
+  
+
   localStorage.setItem('ProfilePic', '=')
   return (
     
@@ -29,12 +34,8 @@ function Feed() {
       <Navbar UserPic={userimg} UserName={username} UserId={userid}/>  
       <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-14 example'   style={{ background: "#222433" }} >
       
-        
-      
         <ComponentSearch UserPic={userimg} UserName={username} />
-        <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
-        <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
-        <ComponentPost PosterImg={posterimg} PosterName={postername} PostDisc={postdisc} PostPic={postpic}/>
+        {postArr.map((e,i)=><ComponentPost PosterImg={e.PosterImg} PosterName={e.PosterName} PostDisc={e.PostDisc} PostPic={e.PostPic} key={i}/>)}
       
       </div>
       {/* <ComponentOtherInfo/> */}
