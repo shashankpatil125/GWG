@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ComponentOtherInfo from './ComponentOtherInfo'
 import ComponentPost from './ComponentPost'
-import ComponentSearch from './ComponentSearch'
+import ComponentSearch from './CreatePost'
 import Navbar from './Navbar'
 // import Posts from './Posts'
 import UserInfo from './UserInfo'
