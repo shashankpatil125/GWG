@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import dark from "/workspace/ui/task1/src/components/image/dark.jpg"
-import light from '/workspace/ui/task1/src/components/image/light.jpg'
-import google from '/workspace/ui/task1/src/components/image/google.png'
-import fb from '/workspace/ui/task1/src/components/image/facebook.png'
+import dark from "/workspace/GWG/frontend/src/components/image/dark.jpg"
+import light from '/workspace/GWG/frontend/src/components/image/light.jpg'
+import google from '/workspace/GWG/frontend/src/components/image/google.png'
+import fb from '/workspace/GWG/frontend/src/components/image/facebook.png'
 import { Icon } from '@iconify/react';
 import Lightground from './Lightground'
 import Blackground from './Blackground'

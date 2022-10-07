@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../feed/Navbar'
 import Eventcard from './Eventcard'
-import "/workspace/ui/task1/src/components/feed/feed.css"
+import "/workspace/GWG/frontend/src/components/feed/feed.css"
 import { createClient } from '@supabase/supabase-js'
 
 function EventPlace() {

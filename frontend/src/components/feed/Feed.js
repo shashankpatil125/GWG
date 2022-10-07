@@ -5,7 +5,7 @@ import ComponentSearch from './CreatePost'
 import Navbar from './Navbar'
 // import Posts from './Posts'
 import UserInfo from './UserInfo'
-import "/workspace/ui/task1/src/components/feed/feed.css"
+import "/workspace/GWG/frontend/src/components/feed/feed.css"
 
 
 function Feed() {

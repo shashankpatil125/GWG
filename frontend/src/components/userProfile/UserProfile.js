@@ -1,8 +1,8 @@
 import React from 'react'
-import userprofile from '/workspace/ui/task1/src/components/image/new.jpg'
-import insta from '/workspace/ui/task1/src/components/image/insta.jpg'
-import fb from '/workspace/ui/task1/src/components/image/facebook.png'
-import discord from '/workspace/ui/task1/src/components/image/discord.png'
+import userprofile from '/workspace/GWG/frontend/src/components/image/new.jpg'
+import insta from '/workspace/GWG/frontend/src/components/image/insta.jpg'
+import fb from '/workspace/GWG/frontend/src/components/image/facebook.png'
+import discord from '/workspace/GWG/frontend/src/components/image/discord.png'
 import { Icon } from '@iconify/react';
 
 function UserProfile() {

@@ -5,7 +5,7 @@ import Navbar from '../feed/Navbar'
 import MySquadPlace from './squad components/MySquadPlace'
 import MySquadThumbNail from './squad components/MySquadThumbNail'
 import SquadThubmNail from './squad components/SquadThubmNail'
-import "/workspace/ui/task1/src/components/feed/feed.css"
+import "/workspace/GWG/frontend/src/components/feed/feed.css"
 
 function Squads() {
 
