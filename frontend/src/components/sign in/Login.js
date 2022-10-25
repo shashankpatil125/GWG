@@ -33,24 +33,35 @@ function Login() {
     bool ? setd(" bg-green-600 ") : setd(" bg-yellow-500 ")
     bool ? sete(" text-black ") : sete(" text-yellow-400 ")
   }
-
-  const supabase = createClient('https://ilmdokwizfwrxisiejiq.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlsbWRva3dpemZ3cnhpc2llamlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTk5NTQwNTEsImV4cCI6MTk3NTUzMDA1MX0.55cyt865pWsMi3p5z5RoKLKICPGb5ehYeJJHtjGABG0')
-
+  const supabase = createClient(process.env.REACT_APP_URL, process.env.REACT_APP_API)
+  
   async function post(lid, lpass) {
     var rem
     console.log("ultra");
 
-    const a=await supabase.auth.signIn({
+    const a = await supabase.auth.signIn({
       email: lid,
       password: lpass,
     })
+    localStorage.setItem("usermail", lid)
+    
+    //user id set at a local storage
+    const { data, error } = await supabase
+    .from('users')
+    .select('userId')
+    .eq('userEmail', lid)
+    localStorage.setItem("username", data[0].userId)
+    
+    //user id set at a local storage
+
+
     console.log(a.error);
     if (a.error == null) {
       settof(false);
       console.log(tof);
     }
     else if (a.error !== null) {
-      alert((a.error.message +" "+a.error.status ))
+      alert((a.error.message + " " + a.error.status))
       setlid('')
       setlpass('')
     }
@@ -74,7 +85,7 @@ function Login() {
             </div>
 
 
-            <Link to={tof ? '/signin' : '/feed'}>
+            <Link to={tof ? '/signin' : '/dashboard'}>
               <button className={" text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" + (d)} onClick={() => (post(lid, lpass))}>Login</button>
             </Link>
             <div className='flex justify-center mt-5 '>

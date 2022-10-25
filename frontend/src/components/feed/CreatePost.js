@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import { createClient } from '@supabase/supabase-js'
 
 
@@ -12,19 +13,19 @@ function CreatePost(props) {
 
     const supabase = createClient(
         process.env.REACT_APP_URL,
-        process.env.REACT_APP_API        
+        process.env.REACT_APP_API
     )
 
     async function upload() {
         const current = new Date();
         const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
         const showTime = current.getHours() + ':' + current.getMinutes();
-        
+        const userEmail=localStorage.getItem("usermail");
+        const username=localStorage.getItem("username");
         // const { data, error } = await supabase
         await supabase
             .from('posts')
-            // .insert([{ discription: disc, date: date, time: showTime, file:file }])
-            .insert([{ discription: disc, date: date, time: showTime }])
+            .insert([{ user:username, discription: disc, date: date, time: showTime }])
         setdisc('')
         console.log(file);
     }
@@ -45,7 +46,7 @@ function CreatePost(props) {
                 <Icon className='text-end my-auto text-3xl text-slate-400 mr-2' icon="akar-icons:link-chain" />
                 <Icon className='text-end my-auto text-3xl text-slate-400 mr-3' icon="entypo:emoji-happy" /> */}
                 <button className='bg-blue-700  rounded-md px-4 py-1 absolute right-6 bottom-1' onClick={upload}>Post</button>
-                
+
             </div>
         </div>
     )
