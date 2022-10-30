@@ -20,14 +20,13 @@ function CreatePost(props) {
         const current = new Date();
         const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
         const showTime = current.getHours() + ':' + current.getMinutes();
-        const userEmail=localStorage.getItem("usermail");
+        // const userEmail=localStorage.getItem("usermail");
         const username=localStorage.getItem("username");
-        // const { data, error } = await supabase
         await supabase
             .from('posts')
-            .insert([{ user:username, discription: disc, date: date, time: showTime }])
+            .insert([{ userId:username, discription: disc, date: date, time: showTime }])
         setdisc('')
-        console.log(file);
+        // console.log(file);
     }
 
     return (

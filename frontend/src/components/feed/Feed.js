@@ -1,13 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
 import React, { useState, useEffect } from 'react'
-import ComponentOtherInfo from './ComponentOtherInfo'
 import ComponentPost from './ComponentPost'
 import ComponentSearch from './CreatePost'
 import Navbar from './Navbar'
 import userpic from '/workspace/GWG/frontend/src/components/image/user.jpeg'
-import PostsArrAsProp from './PostsArrAsProp'
-// import Posts from './Posts'
-import UserInfo from './UserInfo'
 import "/workspace/GWG/frontend/src/components/feed/feed.css"
 
 
@@ -53,7 +49,7 @@ function Feed() {
       <Navbar UserPic={userimg} UserName={username} UserId={userid} />
       <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-14 example' style={{ background: "#222433" }} >
         <ComponentSearch UserPic={userimg} UserName={username} />
-        {postArr.map((e, i) => <ComponentPost PosterImg={userpic} PosterName={e.user} PostDisc={e.discription} key={i} />)}
+        {postArr.map((e, i) => <ComponentPost PosterImg={userpic} PosterName={e.userId} PostDisc={e.discription} key={i} />)}
       </div>
     </div>
   )}

@@ -6,19 +6,19 @@ function ComponentOtherInfo() {
             <div className=' justify-end '>
                 <p className='font-bold text-zinc-400 text-lg m-4 mx-6'>Friends</p>
                 <div className='flex mb-3'>
-                    <img className='bg-black rounded-full h-10 w-10  ml-6'></img>
+                    <img alt="img" className='bg-black rounded-full h-10 w-10  ml-6'></img>
                     <p className='my-auto ml-3 text-lg text-stone-500'>@Friend1</p>
                 </div>
                 <div className='flex mb-3'>
-                    <img className='bg-black rounded-full h-10 w-10  ml-6'></img>
+                    <img alt="img" className='bg-black rounded-full h-10 w-10  ml-6'></img>
                     <p className='my-auto ml-3 text-lg text-stone-500'>@Friend2</p>
                 </div>
                 <div className='flex mb-3'>
-                    <img className='bg-black rounded-full h-10 w-10  ml-6'></img>
+                    <img alt="img" className='bg-black rounded-full h-10 w-10  ml-6'></img>
                     <p className='my-auto ml-3 text-lg text-stone-500'>@Friend3</p>
                 </div>
                 <div className='flex mb-3'>
-                    <img className='bg-black rounded-full h-10 w-10  ml-6'></img>
+                    <img alt="img"s className='bg-black rounded-full h-10 w-10  ml-6'></img>
                     <p className='my-auto ml-3 text-lg text-stone-500'>@Friend4</p>
                 </div>
 

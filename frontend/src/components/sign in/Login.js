@@ -6,12 +6,11 @@ import dark from "/workspace/GWG/frontend/src/components/image/dark.jpg"
 import { Icon } from '@iconify/react'
 import light from '/workspace/GWG/frontend/src/components/image/light.jpg'
 import { createClient } from '@supabase/supabase-js'
-import { withRouter } from 'react-router-dom'
 function Login() {
 
   const [lid, setlid] = useState('');
   const [lpass, setlpass] = useState('');
-  const [tof, settof] = useState(true);
+  const [tof, settof] = useState();
 
   const [bool, setbool] = useState(true)
   const [a, seta] = useState(`url(${dark})`)
@@ -36,7 +35,6 @@ function Login() {
   const supabase = createClient(process.env.REACT_APP_URL, process.env.REACT_APP_API)
   
   async function post(lid, lpass) {
-    var rem
     console.log("ultra");
 
     const a = await supabase.auth.signIn({
@@ -46,7 +44,7 @@ function Login() {
     localStorage.setItem("usermail", lid)
     
     //user id set at a local storage
-    const { data, error } = await supabase
+    const { data } = await supabase
     .from('users')
     .select('userId')
     .eq('userEmail', lid)
@@ -106,4 +104,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Login 

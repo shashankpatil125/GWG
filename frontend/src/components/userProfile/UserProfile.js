@@ -11,8 +11,7 @@ function UserProfile() {
             <div className='h-full w-2/5 rounded-2xl  ' >
                 <div className='pt-6 pl-6 bg-gray-500 h-1/3 w-full rounded-t-2xl'>
                 
-                    {/* <img src={localStorage.getItem('ProfilePic')}></img> */}
-                    <img className='  w-24 h-24 rounded-3xl ' src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeq156jFRSOu4taqykolM4YfHXC31XmnDS-w&usqp=CAU' }></img>
+                    <img className='  w-24 h-24 rounded-3xl ' alt="img" src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeq156jFRSOu4taqykolM4YfHXC31XmnDS-w&usqp=CAU' }></img>
                     <div className='grid justify-items-stretch'>
                     <Icon className='text-2xl text-gray-800 bg-white rounded-sm justify-self-end mr-8  ' icon="ant-design:edit-outlined" />
                 
@@ -29,9 +28,9 @@ function UserProfile() {
                     <button className='bg-gray-500 my-2 mx-1 p-1 rounded-md'>BGMI</button>
                 </div>
                 <div style={{ background: "#28334AFF" }} className=' rounded-b-2xl h-1/3 w-full pt-8 px-6 flex '>
-                    <img className='h-12 w-12 mr-3 rounded-lg' src={insta}></img>
-                    <img className='h-12 w-12 mr-3' src={fb}></img>
-                    <img className='h-12 w-12 rounded-full' src={discord}></img>
+                    <img alt="img" className='h-12 w-12 mr-3 rounded-lg' src={insta}></img>
+                    <img alt="img" className='h-12 w-12 mr-3' src={fb}></img>
+                    <img alt="img" className='h-12 w-12 rounded-full' src={discord}></img>
                 </div>
                 
             </div>

@@ -1,13 +1,4 @@
 import Feed from './Feed'
-import { createClient } from '@supabase/supabase-js'
-import React, { useState, useEffect } from 'react'
-import ComponentOtherInfo from './ComponentOtherInfo'
-import ComponentPost from './ComponentPost'
-import ComponentSearch from './CreatePost'
-import Navbar from './Navbar'
-import PostsArrAsProp from './PostsArrAsProp'
-// import Posts from './Posts'
-import UserInfo from './UserInfo'
 import "/workspace/GWG/frontend/src/components/feed/feed.css"
 
 
