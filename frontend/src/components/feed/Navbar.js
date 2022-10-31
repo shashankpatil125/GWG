@@ -64,7 +64,7 @@ function Navbar(props) {
         <div className='w-full h-16 bg-black flex justify-center fixed'>
             <div className='flex'>
                 <button className='text-white mx-4 text-lg ml-24 ' >
-                    <Link to="/feed">
+                    <Link to="/dashboard">
                         Home</Link></button>
                 <button className='text-white mx-4 text-lg '>
                     <Link to="/squads">Squads</Link></button>
