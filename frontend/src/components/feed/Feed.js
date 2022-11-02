@@ -22,39 +22,43 @@ function Feed() {
   const supabase = createClient(process.env.REACT_APP_URL, process.env.REACT_APP_API)
 
 
-  const [postArr, setPostArr] = useState(null)
+  var [postArr, setPostArr] = useState(null)
 
 
-  var len
+  const [len, setLen] = useState(0)
 
   useEffect(() => {
     async function doit() {
       const { data, error } = await supabase
         .from('posts')
         .select()
-      setPostArr(data);
-      postArr.reverse();
-      console.log(data);
+      setPostArr(data.reverse());
+      setLen(data.length)
+      console.log(len);
+      console.log("max");
     }
     doit()
   }, []);
 
   console.log(postArr);
 
+  
+
+
 
   localStorage.setItem('ProfilePic', '=')
   return <React.Fragment>{
-  postArr !== null && (
-    <div className='flex h-screen w-screen ' style={{ background: "#222433" }}>
-      <Navbar UserPic={userimg} UserName={username} UserId={userid} />
-      <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-14 example' style={{ background: "#222433" }} >
-        <ComponentSearch UserPic={userimg} UserName={username} />
-        {postArr.map((e, i) => <ComponentPost PosterImg={userpic} PosterName={e.userId} PostDisc={e.discription} key={i} />)}
+    postArr !== null && (
+      <div className='flex h-screen w-screen ' style={{ background: "#222433" }}>
+        <Navbar UserPic={userimg} UserName={username} UserId={userid} />
+        <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-14 example' style={{ background: "#222433" }} >
+          <ComponentSearch UserPic={userimg} UserName={username} />
+          {postArr.map((e, i) => <ComponentPost PosterImg={userpic} PosterName={e.userId} PostDisc={e.discription} key={i} />)}
+        </div>
       </div>
-    </div>
-  )}
+    )}
   </React.Fragment>
-  
+
 }
 
 export default Feed
