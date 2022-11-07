@@ -8,12 +8,12 @@ function MySquadPlace() {
 
     var bool = true;
     const [visible,setvisible]=useState(false);
-    const [squadName, setSquadName] = useState("");
-    const [player1, setplayer1] = useState("");
-    const [player2, setplayer2] = useState("");
-    const [player3, setplayer3] = useState("");
-    const [player4, setplayer4] = useState("");
-    const [player5, setplayer5] = useState("");
+    var [squadName, setSquadName] = useState("");
+    var [player1, setplayer1] = useState("");
+    var [player2, setplayer2] = useState("");
+    var [player3, setplayer3] = useState("");
+    var [player4, setplayer4] = useState("");
+    var [player5, setplayer5] = useState("");
 
     const supabase = createClient(
         process.env.REACT_APP_URL,
@@ -39,12 +39,12 @@ function MySquadPlace() {
             .from('squads')
             .insert([
                 {
-                    squadName: squadName,
-                    player1: player1,
-                    player2: player2,
-                    player3: player3,
-                    player4: player4,
-                    player5: player5,
+                    squadName: squadName.trim(),
+                    player1: player1.trim(),
+                    player2: player2.trim(),
+                    player3: player3.trim(),
+                    player4: player4.trim(),
+                    player5: player5.trim(),
                 }
             ])
         console.log(error);
@@ -52,11 +52,11 @@ function MySquadPlace() {
 
     function trigger() {
         // checkExistSquad(squadName)&&
-        checkExist(player1)
-        checkExist(player2)
-        checkExist(player3)
-        checkExist(player4)
-        checkExist(player5)
+        checkExist(player1.trim())
+        checkExist(player2.trim())
+        checkExist(player3.trim())
+        checkExist(player4.trim())
+        checkExist(player5.trim())
         setTimeout(()=>{
             if (bool) {
             console.log(bool);

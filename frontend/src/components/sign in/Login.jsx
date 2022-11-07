@@ -74,7 +74,7 @@ function Login() {
           <h1 className={" font-font-mast text-5xl " + (b) + " font-semibold mb-8"}>Sign in</h1>
           <p className={(b) + " mb-3 text-xl w-80 "}>Sign in and get started</p>
           <div className='w-80'>
-            <input type="text" placeholder='Login' className="w-full rounded-lg h-10 text-xl pl-6 mb-4 text-white bg-sky-900" value={lid} name="id" onChange={e => setlid(e.target.value)} ></input>
+            <input type="text" placeholder='Login' className="w-full rounded-lg h-10 text-xl pl-6 mb-4 text-white bg-sky-900" value={lid} name="id" onChange={e => setlid(e.target.value.trim())} ></input>
             <br />
             <input type="Password" placeholder='Password' className="w-full rounded-lg h-10 text-xl pl-6 mb-4 text-white bg-sky-900" value={lpass} name="pass" onChange={e => setlpass(e.target.value)}></input>
             <div className='flex w-full relative'>
