@@ -46,13 +46,12 @@ function Signup() {
         console.log(t)
 
     }
-
     async function upload() {
         await supabase
             .from('users')
-            .insert([{ userId : userid , userEmail : id }])
+            .insert([{ userId : userid , userEmail : id,  }])
+            alert("Confirm at your mail");
     }
-
     function chenge() {
         if (bool === true) {
             setbool(false)
