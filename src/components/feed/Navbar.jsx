@@ -6,7 +6,6 @@ import UserInfo from './UserInfo';
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import Dopost from '../navbar components/Dopost';
-import { stripZeros } from 'ethers/lib/utils';
 
 //for connect metamask 
 const provideOptions = {

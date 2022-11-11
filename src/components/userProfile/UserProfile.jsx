@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import userprofile from '/workspace/GWG/src/components/image/new.jpg'
-import insta from '/workspace/GWG/src/components/image/insta.jpg'
-import fb from '/workspace/GWG/src/components/image/facebook.png'
-import discord from '/workspace/GWG/src/components/image/discord.png'
 import { Icon } from '@iconify/react';
 import { createClient } from '@supabase/supabase-js'
 
@@ -43,7 +39,7 @@ function UserProfile() {
     
 
     return (
-        <div className='w-screen h-screen py-14 px-24 bg-no-repeat bg-cover ' style={{ backgroundImage: `url(${userprofile})` }}>
+        <div className='w-screen h-screen py-14 px-24 bg-no-repeat bg-cover ' style={{ backgroundImage: ` url(/image/new.jpg) ` }}>
             <div className='h-full w-2/5 rounded-2xl  ' >
                 <div className='pt-6 pl-6 bg-gray-500 h-1/3 w-full rounded-t-2xl'>
                 
@@ -64,9 +60,9 @@ function UserProfile() {
                     <button className='bg-gray-500 my-2 mx-1 p-1 rounded-md'>BGMI</button>
                 </div>
                 <div style={{ background: "#28334AFF" }} className=' rounded-b-2xl h-1/3 w-full pt-8 px-6 flex '>
-                    <img alt="img" className='h-12 w-12 mr-3 rounded-lg' src={insta}></img>
-                    <img alt="img" className='h-12 w-12 mr-3' src={fb}></img>
-                    <img alt="img" className='h-12 w-12 rounded-full' src={discord}></img>
+                    <img alt="img" className='h-12 w-12 mr-3 rounded-lg' src="/image/insta.jpg "></img>
+                    <img alt="img" className='h-12 w-12 mr-3' src="/image/facebook.png "></img>
+                    <img alt="img" className='h-12 w-12 rounded-full' src="/image/discord.png "></img>
                 </div>
                 
             </div>

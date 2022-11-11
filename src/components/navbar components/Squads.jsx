@@ -1,11 +1,11 @@
 import { Icon } from '@iconify/react'
 import { createClient } from '@supabase/supabase-js'
 import React, { useState } from 'react'
+import  '../feed/feed.css'
 import Navbar from '../feed/Navbar'
 import MySquadPlace from './squad components/MySquadPlace'
 import MySquadThumbNail from './squad components/MySquadThumbNail'
 import SquadThubmNail from './squad components/SquadThubmNail'
-import "/workspace/GWG/src/components/feed/feed.css"
 
 function Squads() {
 

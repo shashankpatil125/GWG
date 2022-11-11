@@ -1,5 +1,5 @@
 import Feed from './Feed'
-import "/workspace/GWG/src/components/feed/feed.css"
+import "./feed.css"
 
 
 function Dashboard() { 

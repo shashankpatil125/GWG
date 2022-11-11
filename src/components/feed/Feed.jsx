@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react'
 import ComponentPost from './ComponentPost'
 import ComponentSearch from './CreatePost'
 import Navbar from './Navbar'
-import userpic from '/workspace/GWG/src/components/image/user.jpeg'
-import "/workspace/GWG/src/components/feed/feed.css"
+import "./feed.css"
 
 
 function Feed() {
@@ -53,7 +52,7 @@ function Feed() {
         <Navbar UserPic={userimg} UserName={username} UserId={userid} />
         <div className='h-screen w-7/12 ml-56 overflow-auto  scroll-smooth  pt-14 example' style={{ background: "#222433" }} >
           <ComponentSearch UserPic={userimg} UserName={username} />
-          {postArr.map((e, i) => <ComponentPost PosterImg={userpic} PosterName={e.userId} PostDisc={e.discription} key={i} />)}
+          {postArr.map((e, i) => <ComponentPost PosterImg="/image/user.jpeg" PosterName={e.userId} PostDisc={e.discription} key={i} />)}
         </div>
       </div>
     )}

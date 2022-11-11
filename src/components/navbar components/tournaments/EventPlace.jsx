@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../feed/Navbar'
 import Eventcard from './Eventcard'
-import "/workspace/GWG/src/components/feed/feed.css"
+// import ""
 import { createClient } from '@supabase/supabase-js'
+import Feed from '../../feed/feed.css'
 
 function EventPlace() {
   const supabase = createClient(

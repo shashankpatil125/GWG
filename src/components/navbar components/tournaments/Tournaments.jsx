@@ -1,6 +1,7 @@
 import React from 'react'
+import '../../feed/feed.css'
 import EventPlace from './EventPlace'
-import "/workspace/GWG/src/components/feed/feed.css"
+
 
 
 function Tournaments() {

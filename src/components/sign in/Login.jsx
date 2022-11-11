@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
-import google from '/workspace/GWG/src/components/image/google.png'
-import fb from '/workspace/GWG/src/components/image/facebook.png'
 import { Link } from 'react-router-dom'
-import dark from "/workspace/GWG/src/components/image/dark.jpg"
 import { Icon } from '@iconify/react'
-import light from '/workspace/GWG/src/components/image/light.jpg'
 import { createClient } from '@supabase/supabase-js'
 function Login() {
 
@@ -13,7 +9,7 @@ function Login() {
   const [tof, settof] = useState();
 
   const [bool, setbool] = useState(true)
-  const [a, seta] = useState(`url(${dark})`)
+  const [a, seta] = useState(` url(/image/dark.jpg) `)
   const [b, setb] = useState(" text-white ")
   const [c, setc] = useState(" text-gray-300 ")
   const [d, setd] = useState(" bg-yellow-500 ")
@@ -26,8 +22,8 @@ function Login() {
     else if (bool === false) {
       setbool(true)
     }
-    bool ? seta(` url(${light}) `) : seta(` url(${dark}) `)
-    bool ? setb(" text-black ") : setb(" text-white ")
+    bool ? seta(` url(/image/light.jpg) `) : seta(` url(/image/dark.jpg) `)
+    bool ? setb(" text-black ") : setb(" text-white ")+
     bool ? setc(" text-gray-900 ") : setc(" text-gray-300 ")
     bool ? setd(" bg-green-600 ") : setd(" bg-yellow-500 ")
     bool ? sete(" text-black ") : sete(" text-yellow-400 ")
@@ -65,6 +61,7 @@ function Login() {
       setlpass('')
     }
   }
+  console.log(a);
 
 
   return (
@@ -88,8 +85,8 @@ function Login() {
               <button className={" text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" + (d)} onClick={() => (post(lid, lpass))}>Login</button>
             </Link>
             <div className='flex justify-center mt-5 '>
-              <img src={google} alt="google" className='w-10 rounded-full mx-2'></img>
-              <img src={fb} alt="fb" className='w-10 rounded-full  mx-2'></img>
+              <img src="/image/google.png" alt="google" className='w-10 rounded-full mx-2'></img>
+              <img src="/image/facebook.png" alt="fb" className='w-10 rounded-full  mx-2'></img>
             </div>
 
             <div className='flex mb-12 mt-3 '>

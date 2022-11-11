@@ -12,7 +12,7 @@ function ComponentPost(props) {
                     <p className='my-auto text-xl text-white'>{props.PosterName}</p>
                 </div>
                 <p className='mx-4 text-gray-400'>{props.PostDisc}</p>
-                <img alt="img" className='mt-6 mx-auto w-4/5' src={props.PostPic}></img>
+                {/* <img alt="img" className='mt-6 mx-auto w-4/5' src={props.PostPic}></img> */}
                 <div className='flex'>
                     <button className='flex bg-slate-700 rounded-md w-fit px-2 py-1 text-xl my-4 mx-5 mr-2' >
                         <Icon className='text-gray-400 my-auto mr-1' icon="bxs:like" />

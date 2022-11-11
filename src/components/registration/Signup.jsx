@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
-import google from '/workspace/GWG/src/components/image/google.png'
-import fb from '/workspace/GWG/src/components/image/facebook.png'
-import dark from "/workspace/GWG/src/components/image/dark.jpg"
 import { Icon } from '@iconify/react';
-import light from '/workspace/GWG/src/components/image/light.jpg'
 import { createClient } from '@supabase/supabase-js'
 import { Link } from 'react-router-dom';
 
 function Signup() {
     const [bool, setbool] = useState(true)
-    const [a, seta] = useState(`url(${dark})`)
+    const [a, seta] = useState(`url(/image/dark.jpg)`)
     const [b, setb] = useState(" text-white ")
     const [c, setc] = useState(" text-gray-300 ")
     const [d, setd] = useState(" bg-yellow-500 ")
@@ -59,7 +55,7 @@ function Signup() {
         else if (bool === false) {
             setbool(true)
         }
-        bool ? seta(`url(${light})`) : seta(`url(${dark})`)
+        bool ? seta(`url(/image/light.jpg)`) : seta(`url(/image/dark.jpg)`)
         bool ? setb(" text-black ") : setb(" text-white ")
         bool ? setc(" text-gray-900 ") : setc(" text-gray-300 ")
         bool ? setd(" bg-green-600 ") : setd(" bg-yellow-500 ")
@@ -89,8 +85,8 @@ function Signup() {
                         <Link to={b ? '/signin' : '/signup'}><button className={" text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" + (d)} onClick={() => (post(id, pass, cpass))}>Create account</button></Link>
                         <p className={(b) + " mt-3 mb-3 text-xl"}>Sign up with social media</p>
                         <div className='flex justify-center mt-5 '>
-                            <img src={google} alt="google" className='w-10 rounded-full mx-2'></img>
-                            <img src={fb} alt="fb" className='w-10 rounded-full  mx-2'></img>
+                            <img src="/image/google.png" alt="google" className='w-10 rounded-full mx-2'></img>
+                            <img src="/image/facebook.png " alt="fb" className='w-10 rounded-full  mx-2'></img>
                         </div>
                     </div>
                 </div>
