@@ -10,19 +10,19 @@ import Dashboard from './components/feed/Dashboard';
 
 function App() {
   return (
-    <p>hello</p>
-    // <BrowserRouter>
-    //     <Routes>
-    //       <Route path="/" element={<Login/>}></Route>
-    //       <Route path="/signin" element={<Login/>}></Route>
-    //       <Route path="/signup" element={<Signup/>}></Route>
-    //       <Route path="/dashboard" element={<Dashboard/>}></Route>
-    //       <Route path="/userprofile" element={<UserProfile/>}></Route>
-    //       <Route path="/tournaments" element={<Tournaments/>}></Route>
-    //       <Route path="/tournaments/:gname" element={<GameMoreInfo/>}></Route>
-    //       <Route path="/squads" element={<Squads/>}></Route>
-    //     </Routes>
-    //   </BrowserRouter>
+    // <p>hello</p>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login/>}></Route>
+          <Route path="/signin" element={<Login/>}></Route>
+          <Route path="/signup" element={<Signup/>}></Route>
+          <Route path="/dashboard" element={<Dashboard/>}></Route>
+          <Route path="/userprofile" element={<UserProfile/>}></Route>
+          <Route path="/tournaments" element={<Tournaments/>}></Route>
+          <Route path="/tournaments/:gname" element={<GameMoreInfo/>}></Route>
+          <Route path="/squads" element={<Squads/>}></Route>
+        </Routes>
+      </BrowserRouter>
   );
 }
 export default App;
