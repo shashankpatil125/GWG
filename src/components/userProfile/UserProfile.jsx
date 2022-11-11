@@ -18,7 +18,7 @@ function UserProfile() {
     useEffect(() => {
 
         async function doit(){
-        const { data, error } = await supabase
+        const { data} = await supabase
         .from('users')
         .select()
         .eq('userEmail',localStorage.getItem('usermail'))

@@ -1,17 +1,11 @@
-import { Icon } from '@iconify/react'
-import { createClient } from '@supabase/supabase-js'
-import React, { useState } from 'react'
+
+import React from 'react'
 import  '../feed/feed.css'
 import Navbar from '../feed/Navbar'
 import MySquadPlace from './squad components/MySquadPlace'
-import MySquadThumbNail from './squad components/MySquadThumbNail'
 import SquadThubmNail from './squad components/SquadThubmNail'
 
 function Squads() {
-
-
-
-
     return (
         <div className='h-screen w-screen' style={{ background: "#222433" }}>
             <Navbar />

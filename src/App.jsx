@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import UserProfile from './components/userProfile/UserProfile';
 import Tournaments from './components/navbar components/tournaments/Tournaments';
 import Squads from './components/navbar components/Squads';

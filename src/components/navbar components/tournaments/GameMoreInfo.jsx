@@ -20,7 +20,7 @@ function GameMoreInfo() {
   const [name, setname]=useState();
   
   async function search() {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('tournaments')
       .select('game_Id, gameName, thumbnail, gameTime, gameDate')
       .eq("game_Id", gname)

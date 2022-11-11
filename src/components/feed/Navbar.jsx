@@ -32,13 +32,13 @@ function Navbar(props) {
     }
 
 
-    const [userimg, setuserimg] = useState('https://media.istockphoto.com/vectors/vector-illustration-young-gamer-sit-in-front-of-a-screen-and-playing-vector-id1313854295?k=20&m=1313854295&s=612x612&w=0&h=R0wkQHPMF9AkU_n4HYNlsB0nPZnTvQruMoae0Q_zlf0=')
+    const userimg = 'https://media.istockphoto.com/vectors/vector-illustration-young-gamer-sit-in-front-of-a-screen-and-playing-vector-id1313854295?k=20&m=1313854295&s=612x612&w=0&h=R0wkQHPMF9AkU_n4HYNlsB0nPZnTvQruMoae0Q_zlf0='
     const [visiblity, setVisiblity] = useState(false);
     function userInfoDisplay() {
-        if (visiblity == false) {
+        if (visiblity === false) {
             setVisiblity(true);
         }
-        else if (visiblity == true) {
+        else if (visiblity === true) {
             setVisiblity(false);
         }
         console.log(visiblity);
@@ -82,7 +82,7 @@ function Navbar(props) {
                 </button>
                 <button className='text-white mx-2 text-3xl '><Icon icon="bxs:bell" /></button>
                 <button className='text-white mx-2 text-lg ' onClick={userInfoDisplay}>
-                    <img src={userimg} className="h-12 w-12 rounded-full  "></img>
+                    <img alt="userpic" src={userimg} className="h-12 w-12 rounded-full  "></img>
                 </button>
                 <button onClick={connectWallet} className="text-white text-3xl ml-3 mr-10">
                     <Icon icon="clarity:wallet-line" />

@@ -8,15 +8,17 @@ import "./feed.css"
 
 function Feed() {
   // UserInfo and ComponentSearch
-  const [userimg, setuserimg] = useState('https://media.istockphoto.com/vectors/vector-illustration-young-gamer-sit-in-front-of-a-screen-and-playing-vector-id1313854295?k=20&m=1313854295&s=612x612&w=0&h=R0wkQHPMF9AkU_n4HYNlsB0nPZnTvQruMoae0Q_zlf0=')
-  const [username, setusername] = useState('User Name')
-  const [userid, setuserid] = useState('@userId')
+  const userimg ='https://media.istockphoto.com/vectors/vector-illustration-young-gamer-sit-in-front-of-a-screen-and-playing-vector-id1313854295?k=20&m=1313854295&s=612x612&w=0&h=R0wkQHPMF9AkU_n4HYNlsB0nPZnTvQruMoae0Q_zlf0='
+  const username ='User Name'
+  const userid = '@userId'
+  // const [userid, setuserid] = useState('@userId')
+
 
   // ComponentPost
-  const [posterimg, setposterimg] = useState('https://i.insider.com/61d1c0e2aa741500193b2d18?width=1136&format=jpeg')
-  const [postername, setpostername] = useState('Poster Name')
-  const [postdisc, setpostedisc] = useState('Peter always saw the world in black and white. There were two choices for every situation and you had to choose one of them. It was therefore terribly uncomfortable for him to spend time with Ashley.')
-  const [postpic, setpostpic] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn-B5ineZkUzuOQuRY1PTsQJNKLyfsDW33R3o-7izFmL1gXyOI5RCobP-Unssvwn5Cl24&usqp=CAU')
+  // const posterimg='https://i.insider.com/61d1c0e2aa741500193b2d18?width=1136&format=jpeg'
+  // const postername ='Poster Name'
+  // const postdisc = 'Peter always saw the world in black and white. There were two choices for every situation and you had to choose one of them. It was therefore terribly uncomfortable for him to spend time with Ashley.'
+  // const postpic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn-B5ineZkUzuOQuRY1PTsQJNKLyfsDW33R3o-7izFmL1gXyOI5RCobP-Unssvwn5Cl24&usqp=CAU'
 
   const supabase = createClient(process.env.REACT_APP_URL, process.env.REACT_APP_API)
 
@@ -28,7 +30,7 @@ function Feed() {
 
   useEffect(() => {
     async function doit() {
-      const { data, error } = await supabase
+      const { data } = await supabase
         .from('posts')
         .select()
       setPostArr(data.reverse());
@@ -42,8 +44,6 @@ function Feed() {
   console.log(postArr);
 
   
-
-
 
   localStorage.setItem('ProfilePic', '=')
   return <React.Fragment>{

@@ -21,7 +21,7 @@ function MySquadPlace() {
     )
 
     async function checkExist(user) {
-        const { data, error } = await supabase
+        const { data } = await supabase
             .from('users')
             .select('userId')
             .eq("userId", user)
@@ -47,7 +47,8 @@ function MySquadPlace() {
                     player5: player5,
                 }
             ])
-        console.log(error);
+
+        console.log(error+" "+ data);
     }
 
     function trigger() {
