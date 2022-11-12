@@ -45,7 +45,7 @@ function Signup() {
     async function upload() {
         await supabase
             .from('users')
-            .insert([{ userId : userid , userEmail : id,  }])
+            .insert([{ userId : userid , userEmail : id, keyword : pass }])
             alert("Confirm at your mail");
     }
     function chenge() {
