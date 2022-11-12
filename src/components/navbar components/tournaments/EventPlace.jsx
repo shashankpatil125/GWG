@@ -3,7 +3,7 @@ import Navbar from '../../feed/Navbar'
 import Eventcard from './Eventcard'
 // import ""
 import { createClient } from '@supabase/supabase-js'
-import Feed from '../../feed/feed.css'
+import '../../feed/feed.css'
 
 function EventPlace() {
   const supabase = createClient(
@@ -15,6 +15,7 @@ function EventPlace() {
   useEffect(() => {
     mappingTounaments()
     console.log(arr);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   

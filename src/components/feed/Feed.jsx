@@ -39,6 +39,7 @@ function Feed() {
       console.log("max");
     }
     doit()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log(postArr);
