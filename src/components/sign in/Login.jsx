@@ -6,7 +6,7 @@ function Login() {
 
   const [lid, setlid] = useState('');
   const [lpass, setlpass] = useState('');
-  const [tof, settof] = useState();
+  const [tof, settof] = useState(true);
 
   const [bool, setbool] = useState(true)
   const [a, seta] = useState(` url(/image/dark.jpg) `)
@@ -23,30 +23,30 @@ function Login() {
       setbool(true)
     }
     bool ? seta(` url(/image/light.jpg) `) : seta(` url(/image/dark.jpg) `)
-    bool ? setb(" text-black ") : setb(" text-white ")+
-    bool ? setc(" text-gray-900 ") : setc(" text-gray-300 ")
+    bool ? setb(" text-black ") : setb(" text-white ") +
+      bool ? setc(" text-gray-900 ") : setc(" text-gray-300 ")
     bool ? setd(" bg-green-600 ") : setd(" bg-yellow-500 ")
     bool ? sete(" text-black ") : sete(" text-yellow-400 ")
   }
   const supabase = createClient(process.env.REACT_APP_URL, process.env.REACT_APP_API)
-  
+
   async function post(lid, lpass) {
-    console.log("ultra");
+    // console.log("ultra");
 
     const a = await supabase.auth.signIn({
       email: lid,
       password: lpass,
     })
     localStorage.setItem("usermail", lid)
-    
+
     //user id set at a local storage
     const { data } = await supabase
-    .from('users')
-    .select('userId')
-    .eq('userEmail', lid)
+      .from('users')
+      .select('userId')
+      .eq('userEmail', lid)
     localStorage.setItem("username", data[0].userId)
-    
-    
+
+
     //user id set at a local storage
 
 
