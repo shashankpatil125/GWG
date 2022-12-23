@@ -57,6 +57,7 @@ function Login() {
     }
     else if (a.error !== null) {
       alert((a.error.message + " " + a.error.status))
+      settof(true)
       setlid('')
       setlpass('')
     }
