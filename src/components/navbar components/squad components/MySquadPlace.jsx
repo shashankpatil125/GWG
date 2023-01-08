@@ -15,7 +15,9 @@ function MySquadPlace() {
     const [player4, setplayer4] = useState("");
     const [player5, setplayer5] = useState("");
     const [btnName,setBtnName] = useState("Create Squad")
+    const [mysquad,setMySquad]=useState();
 
+    const username=localStorage.getItem('username')
     const supabase = createClient(
         process.env.REACT_APP_URL,
         process.env.REACT_APP_API
@@ -30,7 +32,7 @@ function MySquadPlace() {
         if (data.length === 0 && user !== "") {
             bool = false
             alert("user " + user + " does not exist")
-        }
+        }  
 
     }
 
@@ -48,12 +50,29 @@ function MySquadPlace() {
                     player5: player5,
                 }
             ])
-
+            
+            if(player1!==""){insertAtSquadMember(player1)}
+            if(player2!==""){insertAtSquadMember(player2)}
+            if(player3!==""){insertAtSquadMember(player3)}
+            if(player4!==""){insertAtSquadMember(player4)}
+            if(player5!==""){insertAtSquadMember(player5)}
+            
             if(error==null){
                 setBtnName("Squad Created")
             }
 
         console.log(error + " " + data);
+    }
+
+    async function insertAtSquadMember(player){
+        await supabase
+            .from('squadMembers')
+            .insert([
+                {
+                    username:player,
+                    squadName:squadName
+                }
+            ])
     }
 
     function trigger() {
@@ -74,6 +93,16 @@ function MySquadPlace() {
         }, 3000);
     }
 
+    async function getdetail(){
+        const {data}=await supabase
+        .from('squadMembers')
+        .select('squadName')
+        .eq('username', username)
+        setMySquad(data)
+    }
+    getdetail()
+
+
     return (
         <div className='h-screen pt-16 overflow-scroll example p-3'>
             <div>
@@ -92,10 +121,9 @@ function MySquadPlace() {
                     <button className='bg-yellow-500 rounded-lg w-full mx-2 p-2 font-semibold mt-3 mb-4' onClick={trigger}>{btnName}</button>
                 </div> : null}
 
-                <MySquadThumbNail />
-                <MySquadThumbNail />
-                <MySquadThumbNail />
-                <MySquadThumbNail />
+                {mysquad===undefined?null: mysquad.map((e, i) => <MySquadThumbNail name={e.squadName} key={i} />)}
+                {/* <MySquadThumbNail /> */}
+                {/* <MySquadThumbNail /> */}
             </div>
         </div>
     )
